@@ -1,0 +1,26 @@
+@import "vars";
+@import "colors";
+@import "mixins";
+@import "util";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: @bg;
+}
+
+html, body, main {
+  .full;
+}
+
+header {
+  display: block;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}

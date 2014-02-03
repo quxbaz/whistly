@@ -1,0 +1,63 @@
+* Todo
+  - Built for mobile, but also available on desktop browser.
+  - Similar to Trello, but better interface.
+  - [TODO] Prototype as a webapp first!
+  - Lists are stored in a format similar to org files. You can edit
+    your lists either by editing your org file as plain text or by
+    manipulating the lists and their items graphically. While editing
+    a list in plaintext, your GUI lists update automatically; V.V.
+  - The reason for this feature is that it's much faster to edit a
+    list in plaintext. It's annoying having to click "X" on a list or
+    go through modal and confirmations (a la Trello) just to
+    delete. It hampers the user from editing a list quickly,
+    conveniently, and efficiently. At the same time, you also want to
+    be able to see many of your lists at once, or get a quick
+    overview of them. This is a strength of the GUI. You also want to
+    be able to move them easily by simply dragging and dropping.
+** Goals
+   Be the BEST todolist app there is. But also be more than a todolist
+   app, also be useful for notetaking, memorizing things, organizing
+   information.
+** Challenges
+   - How to do undo/redo actions in plaintext pane.
+   - How to store a list and its associated data as plaintext?
+** Features
+    - Plaintext and GUI list editing.
+    - Easy and powerful undo/redo.
+    - Nothing ever gets deleted unless the user explicitly deletes it,
+      things are archived or put in a garbage bin.
+    - Backup/restore lists from a plaintext file.
+    - Create a list as a plaintext file and upload it.
+    - [?] Import from google tasks
+    - Emacs/vim bindings. We want the user to be able to edit as fast
+      as he can. Also look for other popular bindings.
+    - Configurable controls for plaintext editing.
+      + Settings can be saved and exported.
+    - Plugin system.
+      + Keybind plugins.
+    - Sharing.
+      + Share everything or individual lists.
+    - Lock list option?
+    - Multi-user access?
+    - Hints?
+    - GUI settings:
+      + Show N lists.
+    - When you click a GUI list, the plaintext window automatically
+      jumps to the position of the selected list and its item and
+      highlights it.
+    - Email lists.
+** Potential names
+   Listmaster
+   Masterlist
+   Listlist
+   Doublelist
+   Whisk
+   Plainlist
+   Plain Old List
+   Lister
+   Todo
+   Text
+   Plain
+** Ideas
+   Look at Trello and Google Tasks
+   Look at other list apps (web and mobile)
