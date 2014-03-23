@@ -14,6 +14,12 @@
     be able to see many of your lists at once, or get a quick
     overview of them. This is a strength of the GUI. You also want to
     be able to move them easily by simply dragging and dropping.
+  - Hide editor on startup so lists are in full view.
+  - Add option to default to adding/creating new item on app
+    launch/focus for convenience.
+** Focus
+   - Stellar, excellent, top-notch, flawless, perfect design and typography.
+   - Make undoing easy.
 ** Goals
    Be the BEST todolist app there is. But also be more than a todolist
    app, also be useful for notetaking, memorizing things, organizing
@@ -22,30 +28,46 @@
    - How to do undo/redo actions in plaintext pane.
    - How to store a list and its associated data as plaintext?
 ** Features
-    - Plaintext and GUI list editing.
-    - Easy and powerful undo/redo.
-    - Nothing ever gets deleted unless the user explicitly deletes it,
-      things are archived or put in a garbage bin.
-    - Backup/restore lists from a plaintext file.
-    - Create a list as a plaintext file and upload it.
-    - [?] Import from google tasks
-    - Emacs/vim bindings. We want the user to be able to edit as fast
-      as he can. Also look for other popular bindings.
-    - Configurable controls for plaintext editing.
-      + Settings can be saved and exported.
-    - Plugin system.
-      + Keybind plugins.
-    - Sharing.
-      + Share everything or individual lists.
-    - Lock list option?
-    - Multi-user access?
-    - Hints?
-    - GUI settings:
-      + Show N lists.
-    - When you click a GUI list, the plaintext window automatically
-      jumps to the position of the selected list and its item and
-      highlights it.
-    - Email lists.
+   - Plaintext and GUI list editing.
+   - Easy and powerful undo/redo.
+   - Everything should be recoverable. More than undo/redo, undo trees
+     similar to emacs? Allow recovering lists and items.
+   - Nothing ever gets deleted unless the user explicitly deletes it,
+     things are archived or put in a garbage bin.
+   - Backup/restore lists from a plaintext file.
+   - Create a list as a plaintext file and upload it.
+   - [?] Import from google tasks
+   - Emacs/vim bindings. We want the user to be able to edit as fast
+     as he can. Also look for other popular bindings.
+   - Configurable controls for plaintext editing.
+     + Settings can be saved and exported.
+   - Plugin system.
+     + Keybind plugins.
+   - Sharing.
+     + Share everything or individual lists.
+   - Lock list option?
+   - Multi-user access?
+   - Hints?
+   - GUI settings:
+     + Show N lists.
+   - When you click a GUI list, the plaintext window automatically
+     jumps to the position of the selected list and its item and
+     highlight it.
+   - Email lists to people.
+   - Searchable
+   - Arrow keys to navigate lists in GUI (up/down/left/right)
+     + Navigates between items AND lists.
+   - Empty box with for adding new lists.
+   - Customizeable list width.
+   - Hotkeys for GUI editing.
+     + Navigation
+     + Marking done
+     + Clearing done
+     + Undo
+     + Redo
+     + Deleting
+   - Mobile widget
+   - Adjustable column numbers column-space width.
 ** Potential names
    Listmaster
    Masterlist
@@ -61,3 +83,9 @@
 ** Ideas
    Look at Trello and Google Tasks
    Look at other list apps (web and mobile)
+
+* Technical
+** Issue
+   Find out what's causing vertical screen scroll.
+** Templating
+   Get templating system working.
