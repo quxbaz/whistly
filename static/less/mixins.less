@@ -2,9 +2,7 @@
   outline: 1px solid @color;
 }
 
-.debug {
-  .d();
-}
+.d {.d;}
 
 .b(@color:#ff0000) {
   border: 1px solid @color;
@@ -21,15 +19,18 @@
 }
 
 .cols {
+  font-size: 0;
   > * {
     .col;
+    font-size: @base-font-size;
   }
 }
 
 .collapse {
   font-size: 0;
-  white-space: nowrap;
+  // white-space: nowrap;
   > * {
+    .col;
     font-size: @base-font-size;
   }
 }

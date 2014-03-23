@@ -2,4 +2,4 @@
 ##
 ##   $ source dev-setup
 
-source ./venv/bin/activate
+source ~/.venv/textlist/bin/activate

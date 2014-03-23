@@ -9,5 +9,11 @@ require.config({
 });
 
 require(['app/app'], function(app) {
+
   console.log('Init app');
+
+  _.mixin(_.str.exports());
+
+  app.run();
+
 });
