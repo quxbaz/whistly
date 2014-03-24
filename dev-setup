@@ -3,3 +3,4 @@
 ##   $ source dev-setup
 
 source ~/.venv/textlist/bin/activate
+alias 'ci'='git commit'
