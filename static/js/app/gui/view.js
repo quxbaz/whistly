@@ -6,7 +6,8 @@
 
 
 App.GuiView = Em.View.extend({
-  templateName: 'gui'
+  templateName: 'gui',
+  classNames: ['gui']
 });
 
 App.ListsView = Em.View.extend({

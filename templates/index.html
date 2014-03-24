@@ -15,9 +15,10 @@
   {% raw %}
 
     <script type="text/x-handlebars" data-template-name="application">
-      <h1>Textlist</h1>
-      {{outlet "editor"}}
-      {{outlet "gui"}}
+      <div class="work-well">
+        {{outlet "editor"}}
+        {{outlet "gui"}}
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="editor">
@@ -25,13 +26,23 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="gui">
-      <div class="gui">GUI</div>
+      {{#each tokens}}
+        <div>
+          <div><strong>{{this.header}}</strong></div>
+          <ul>
+            {{#each this.lines}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/each}}
     </script>
 
-    <script type="text/x-handlebars" data-template-name="editable">
-      <div class="editor" {{bind-attr contenteditable="view.editModeAttr"}}>
-        {{text}}
-      </div>
+    <script type="text/x-handlebars" data-template-name="list">
+      <div></div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="list-item">
     </script>
 
   {% endraw %}

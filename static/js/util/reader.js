@@ -18,21 +18,49 @@ var reader = {
   },
 
   $fmt: function($el) {
-    return this.fmt($($el)[0].innerText);
+    return reader.fmt($($el)[0].innerText);
   },
 
   parse: function(str) {
     // Parse a formatted string into structured tokens.
 
-    logn('\nParse');
-
     var lines = str.split('\n');
+    var tokens = [];
 
+    /*
+      Filter out any empty lines.
+      Todo: Make more efficient. This loops through the list twice without needing to.
+    */
+    lines = _.chain(lines)
+      .map(function(line) {
+        return line.trim();
+      }).filter(function(line) {
+        return line.length > 0;
+      }).value();
+
+    var list;
     _.each(lines, function(line, i) {
-      log(i + ':', line);
+      var isHeading = _.startsWith(line, '*');
+      if (i == 0 || isHeading) {
+        list = {
+          header: '',
+          lines: []
+        };
+        tokens.push(list);
+        if (isHeading)
+          list.header = reader.fmtHeading(line);
+        else
+          list.lines.push(line);
+      } else {
+        list.lines.push(line);
+      }
     });
 
-    return str;
+    return tokens;
+  },
+
+  fmtHeading: function(heading) {
+    return _.trim(heading.replace(/^\**/g, ''));
   }
 
 };

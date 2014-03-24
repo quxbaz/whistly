@@ -87,7 +87,15 @@
 * Technical
   - [ ] Build a requirements loader.
   - [ ] Stop using requirejs (slowing down development too much!)
+  - [ ] Start writing unit tests.
+  - [ ] Set up an automatic test runner.
+  - [ ] Start writing tests for reader.
+  - [ ] Move reader tokenizer to new module.
+  - [ ] Think about performance!
+    + [ ] How to avoid rerendering every list when a single character changes.
+    + [ ] Write filterMap function. Filters then maps.
+  - [ ] Editor is mapped to gui. Now map the gui to the editor.
+  - [ ] Do performance/load testing.
+  - [ ] Set up ember-compatible templating system (compile template?).
 ** Issue
    - Redo module project organization. Other modules can't be loaded.
-** Templating
-   Get templating system working.

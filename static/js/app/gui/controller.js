@@ -7,9 +7,12 @@
 
 App.GuiController = Em.Controller.extend({
 
+  tokens: [],
+
   actions: {
     textChanged: function(tokens) {
-      // log(tokens);
+      this.set('tokens', tokens);
+      // _.each(tokens, function() {});
     }
   }
 

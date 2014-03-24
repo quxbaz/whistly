@@ -8,26 +8,50 @@
        box-sizing: border-box;
 }
 
+html, body, main {
+  .full;
+}
+
 body {
+  margin: 0;
   font-family: helvetica, arial, sans-serif;
   background: @bg;
 }
 
+#app {
+  .full;
+  .d;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.work-well {
+  .squeeze;
+  height: 100%;
+}
+
 .editor {
-  width: 90%;
-  min-height: 320px;
-  margin: 24px auto;
-  padding: 24px;
-  border: 1px solid #eee;
+  .col;
+  width: 30%;
+  height: 100%;
+  .border;
+}
+
+.text-editor {
+  .padding;
+  height: 100%;
 }
 
 .gui {
-  margin-top: 24px;
+  .col;
+  width: 69%;
+  height: 100%;
+  margin-left: 1%;
+  .padding;
+  .border;
 }
-
-// html, body, main {
-//   .full;
-// }
 
 // header {
 //   display: block;

@@ -6,16 +6,8 @@
 
 
 App.EditorView = Em.View.extend({
-
   templateName: 'editor',
-  rawText: 'Edit this content.',
-
-  // // TODO: How to bind?
-  // input: function(event) {
-  //   log(this.get('rawText'));
-  //   this.get('controller').send('input', event);
-  // }
-
+  classNames: ['editor'],
 });
 
 App.ListsView = Em.View.extend({
