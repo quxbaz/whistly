@@ -1,5 +1,7 @@
 /*
-  editor/controller
+  local variables:
+  buffer-name: "editor/controller"
+  end:
 */
 
 
@@ -9,9 +11,12 @@ define(['app/app'], function(App) {
 
     needs: ['gui'],
 
+    // rawText: 'Edit this content.',
+
     actions: {
-      input: function(event) {
-        log('editor/input');
+      textChanged: function(event) {
+        log('changed');
+        // log(this.get('rawText'));
         this.get('controllers.gui').send('edit');
       }
     }

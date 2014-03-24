@@ -1,5 +1,7 @@
 /*
-  gui/view
+  local variables:
+  buffer-name: "gui/view"
+  end:
 */
 
 

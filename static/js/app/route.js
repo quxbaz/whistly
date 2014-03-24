@@ -1,5 +1,7 @@
 /*
-  route
+  local variables:
+  buffer-name: "route"
+  end:
 */
 
 
@@ -9,7 +11,7 @@ define(['app/app'], function(App) {
     // Resources
   });
 
-  App.IndexRoute = Em.Route.extend({
+   App.IndexRoute = Em.Route.extend({
     renderTemplate: function() {
       this.render();
       this.render('editor', {

@@ -1,5 +1,7 @@
 /*
-  editor/view
+  local variables:
+  buffer-name: "editor/view"
+  end:
 */
 
 
@@ -8,10 +10,13 @@ define(['app/app'], function(App) {
   App.EditorView = Em.View.extend({
 
     templateName: 'editor',
+    rawText: 'Edit this content.',
 
-    input: function(event) {
-      this.get('controller').send('input', event);
-    }
+    // // TODO: How to bind?
+    // input: function(event) {
+    //   log(this.get('rawText'));
+    //   this.get('controller').send('input', event);
+    // }
 
   });
 

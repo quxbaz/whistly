@@ -1,5 +1,7 @@
 /*
-  app
+  local variables:
+  buffer-name: "app"
+  end:
 */
 
 

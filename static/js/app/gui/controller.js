@@ -1,5 +1,7 @@
 /*
-  gui/controller
+  local variables:
+  buffer-name: "gui/controller"
+  end:
 */
 
 
@@ -8,9 +10,7 @@ define(['app/app'], function(App) {
   App.GuiController = Em.Controller.extend({
 
     actions: {
-      edit: function() {
-        log('gui/edit');
-      }
+      edit: function() {}
     }
 
   });

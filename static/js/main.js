@@ -1,8 +1,18 @@
+/*
+  main.js
+*/
+
+
 require.config({
+
+  // TODO:Remove this in production.
+  urlArgs: "ts="+new Date().getTime(),
+
   baseUrl: '/static/js',
   paths: {
     moment: '/static/lib/moment/2.3.1/moment.min'
   }
+
 });
 
 require(
@@ -13,6 +23,9 @@ require(
     'app/app',
     'app/route',
     'app/controller',
+
+    // Common
+    'common/view',
 
     // Editor
     'app/editor/view',

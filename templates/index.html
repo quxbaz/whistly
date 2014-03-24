@@ -21,13 +21,17 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="editor">
-    <div class="editor" contenteditable>
-      Edit this content
-    </div>
+    {{view App.ContentEditableView}}
   </script>
 
   <script type="text/x-handlebars" data-template-name="gui">
     <div class="gui">GUI</div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="editable">
+    <div class="editor" {{bind-attr contenteditable="view.editModeAttr"}}>
+      {{view.rawText}}
+    </div>
   </script>
 
   <script type="text/javascript" src="/static/lib/jquery/1.10.2/jquery.js"></script>
