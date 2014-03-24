@@ -5,23 +5,19 @@
 */
 
 
-define(['app/app'], function(App) {
+App.EditorView = Em.View.extend({
 
-  App.EditorView = Em.View.extend({
+  templateName: 'editor',
+  rawText: 'Edit this content.',
 
-    templateName: 'editor',
-    rawText: 'Edit this content.',
+  // // TODO: How to bind?
+  // input: function(event) {
+  //   log(this.get('rawText'));
+  //   this.get('controller').send('input', event);
+  // }
 
-    // // TODO: How to bind?
-    // input: function(event) {
-    //   log(this.get('rawText'));
-    //   this.get('controller').send('input', event);
-    // }
+});
 
-  });
-
-  App.ListsView = Em.View.extend({
-    templateName: 'lists'
-  });
-
+App.ListsView = Em.View.extend({
+  templateName: 'lists'
 });

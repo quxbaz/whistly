@@ -5,25 +5,21 @@
 */
 
 
-define(['app/app'], function(App) {
+App.ContentEditableView = Em.View.extend({
 
-  App.ContentEditableView = Em.View.extend({
+  templateName: 'editable',
+  editMode: true,
 
-    templateName: 'editable',
-    editMode: true,
+  editModeAttr: function() {
+    return this.get('editMode') ? 'true' : null;
+  }.property('editMode'),
 
-    editModeAttr: function() {
-      return this.get('editMode') ? 'true' : null;
-    }.property('editMode'),
+  text: 'Edit this content.',
 
-    text: 'Edit this content.',
+  input: function(event) {
+    var newText = reader.$fmt(this.$('.editor'));
+    this.set('text', newText);
+    this.get('controller').send('textChanged', newText);
+  }
 
-    input: function(event) {
-      var newText = reader.$fmt(this.$('.editor'));
-      this.set('text', newText);
-      this.get('controller').send('textChanged', newText);
-    }
-
-  });
-
-})
+});

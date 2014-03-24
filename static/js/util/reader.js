@@ -24,10 +24,13 @@ var reader = {
   parse: function(str) {
     // Parse a formatted string into structured tokens.
 
-    log('** Parse');
+    logn('\nParse');
 
     var lines = str.split('\n');
-    log(lines);
+
+    _.each(lines, function(line, i) {
+      log(i + ':', line);
+    });
 
     return str;
   }
