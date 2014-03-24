@@ -10,7 +10,9 @@ define(['app/app'], function(App) {
   App.GuiController = Em.Controller.extend({
 
     actions: {
-      edit: function() {}
+      textChanged: function(tokens) {
+        // log(tokens);
+      }
     }
 
   });

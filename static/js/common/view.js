@@ -16,10 +16,12 @@ define(['app/app'], function(App) {
       return this.get('editMode') ? 'true' : null;
     }.property('editMode'),
 
-    rawText: 'Edit this content.',
+    text: 'Edit this content.',
 
-    input: function() {
-      this.get('controller').send('textChanged');
+    input: function(event) {
+      var newText = reader.$fmt(this.$('.editor'));
+      this.set('text', newText);
+      this.get('controller').send('textChanged', newText);
     }
 
   });

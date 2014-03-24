@@ -85,7 +85,9 @@
    Look at other list apps (web and mobile)
 
 * Technical
+  - [ ] Build a requirements loader.
+  - [ ] Stop using requirejs (slowing down development too much!)
 ** Issue
-   Find out what's causing vertical screen scroll.
+   - Redo module project organization. Other modules can't be loaded.
 ** Templating
    Get templating system working.

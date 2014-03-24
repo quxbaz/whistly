@@ -5,7 +5,7 @@
 
 require.config({
 
-  // TODO:Remove this in production.
+  // TODO: Remove this in production.
   urlArgs: "ts="+new Date().getTime(),
 
   baseUrl: '/static/js',
@@ -21,8 +21,8 @@ require(
 
     // App
     'app/app',
-    'app/route',
     'app/controller',
+    'app/route',
 
     // Common
     'common/view',
@@ -33,7 +33,7 @@ require(
 
     // GUI
     'app/gui/view',
-    'app/gui/controller'
+    'app/gui/controller',
 
   ],
 

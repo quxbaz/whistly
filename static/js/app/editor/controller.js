@@ -11,13 +11,10 @@ define(['app/app'], function(App) {
 
     needs: ['gui'],
 
-    // rawText: 'Edit this content.',
-
     actions: {
-      textChanged: function(event) {
-        log('changed');
-        // log(this.get('rawText'));
-        this.get('controllers.gui').send('edit');
+      textChanged: function(text) {
+        // Update the gui controller.
+        this.get('controllers.gui').send('textChanged', reader.parse(text));
       }
     }
 
