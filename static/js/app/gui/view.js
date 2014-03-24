@@ -10,6 +10,13 @@ App.GuiView = Em.View.extend({
   classNames: ['gui']
 });
 
-App.ListsView = Em.View.extend({
-  templateName: 'lists'
+App.ListView = Em.View.extend({
+  tagName: 'div',
+  classNames: ['list'],
+  templateName: 'list'
+});
+
+App.ListItemView = Em.View.extend({
+  tagName: 'li',
+  templateName: 'list-item'
 });

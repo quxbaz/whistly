@@ -4,3 +4,4 @@
 
 source ~/.venv/textlist/bin/activate
 alias 'ci'='git commit'
+alias 'dif'='git diff'

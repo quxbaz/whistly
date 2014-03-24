@@ -43,12 +43,12 @@ var reader = {
       var isHeading = _.startsWith(line, '*');
       if (i == 0 || isHeading) {
         list = {
-          header: '',
+          heading: '',
           lines: []
         };
         tokens.push(list);
         if (isHeading)
-          list.header = reader.fmtHeading(line);
+          list.heading = reader.fmtHeading(line);
         else
           list.lines.push(line);
       } else {

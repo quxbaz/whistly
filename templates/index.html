@@ -26,23 +26,24 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="gui">
-      {{#each tokens}}
-        <div>
-          <div><strong>{{this.header}}</strong></div>
-          <ul>
-            {{#each this.lines}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-        </div>
+      {{#each list in tokens}}
+        {{view App.ListView list=list}}
       {{/each}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="list">
-      <div></div>
+      <header>
+        <strong>{{list.heading}}</strong>
+      </header>
+      <ul>
+        {{#each line in list.lines}}
+          {{view App.ListItemView line=line}}
+        {{/each}}
+      </ul>
     </script>
 
     <script type="text/x-handlebars" data-template-name="list-item">
+      {{line}}
     </script>
 
   {% endraw %}
