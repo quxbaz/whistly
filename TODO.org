@@ -94,8 +94,11 @@
   - [ ] Think about performance!
     + [ ] How to avoid rerendering every list when a single character changes.
     + [ ] Write filterMap function. Filters then maps.
+  - [ ] Address performance issues! You need a good algorithm.
+    + [ ] Try perhaps a nice diff algorithm?
   - [ ] Editor is mapped to gui. Now map the gui to the editor.
   - [ ] Do performance/load testing.
   - [ ] Set up ember-compatible templating system (compile template?).
+  - [ ] User bower for libs
 ** Issue
    - Redo module project organization. Other modules can't be loaded.

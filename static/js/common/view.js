@@ -17,18 +17,24 @@ App.ContentEditableView = Em.View.extend({
   }.property('editMode'),
 
   text: [
+
     '* Heading A',
     'a1',
     'a2',
     'a3',
+    '',
+
     '* Heading B',
     'b1',
     'b2',
     'b3',
     'b4',
+    '',
+
     '* Heading C',
     'c1',
-    'c2'
+    'c2',
+
   ].join('<br/>'),
 
   didInsertElement: function() {
