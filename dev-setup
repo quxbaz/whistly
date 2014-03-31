@@ -1,7 +1,5 @@
-## Use this file by sourcing it. E.g.:
-##
-##   $ source dev-setup
+# Use this file by sourcing it. E.g.:
+#
+#   $ source dev-setup
 
 source ~/.venv/textlist/bin/activate
-alias 'ci'='git commit'
-alias 'dif'='git diff'
