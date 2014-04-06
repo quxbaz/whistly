@@ -4,9 +4,8 @@
 
 <head>
   <title>Textlist</title>
-  <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css" type="text/css" media="screen" />
-  <!-- <link rel="stylesheet/less" href="/static/lib/normalize/3.0.0/normalize.css" type="text/css" /> -->
-  <link rel="stylesheet/less" href="/static/ext/editor/editor.less" type="text/css" />
+  <link rel="stylesheet/less" href="/static/lib/normalize/normalize.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css" type="text/css" media="screen" /> -->
   <link rel="stylesheet/less" href="/static/less/style.less" type="text/css" />
   <script src="/static/lib/less/dist/less-1.7.0.min.js" type="text/javascript"></script>
 </head>
@@ -16,10 +15,7 @@
   {% raw %}
 
     <script type="text/x-handlebars" data-template-name="application">
-      <div class="work-well">
-        {{outlet "editor"}}
-        {{outlet "gui"}}
-      </div>
+      {{outlet}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="gui">

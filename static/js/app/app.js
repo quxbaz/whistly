@@ -18,10 +18,6 @@ define('App', function() {
     adapter  : DS.FixtureAdapter
   });
 
-  // TODO: Move into another file.
-  App.EditorController = Em.Controller.extend(editor.controller);
-  App.EditorView = Em.View.extend(editor.view);
-
   return App;
 
 });
