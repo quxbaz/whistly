@@ -1,13 +1,17 @@
+from os import path, walk
 import flask
 from flask import Flask, render_template, request, url_for, send_file
+from flask.ext.assets import Environment, Bundle
 from conf import conf
-from os import path, walk
-# import random
-# import uuid
-# import json
 
 app = Flask(__name__)
 app.config.from_object(conf)
+
+assets = Environment(app)
+assets.config['less_bin'] = path.join(conf.PROJECT_PATH, 'node_modules/.bin/lessc')
+
+css = Bundle('less/style.less', filters='less', output='cache/style.css')
+assets.register('style', css)
 
 @app.route('/')
 def index():
