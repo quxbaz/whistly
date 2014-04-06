@@ -100,5 +100,6 @@
   - [ ] Do performance/load testing.
   - [ ] Set up ember-compatible templating system (compile template?).
   - [ ] User bower for libs
+  - [ ] Create auth front-end and backend.
 ** Issue
    - Redo module project organization. Other modules can't be loaded.
