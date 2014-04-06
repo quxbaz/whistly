@@ -1,0 +1,45 @@
+@list-width: 240px;
+@list-horizontal-spacing: 8px;
+@list-vertical-spacing: 8px;
+@list-padding: 12px;
+@list-border-radius: 3px;
+@color-list-background: #dadada;
+@list-item-padding: 4px 8px;
+@list-item-vertical-spacing: 8px;
+
+.lists {
+  .squeeze;
+}
+
+.add-list {
+  .col;
+  width: @list-width;
+  margin-bottom: @list-vertical-spacing;
+  // margin-left: @list-horizontal-spacing;
+  padding: @list-padding;
+  cursor: pointer;
+  font-weight: bold;
+  background: @color-list-background;
+  opacity: 0.5;
+  border-radius: @list-border-radius;
+}
+
+.list {
+  .col;
+  width: @list-width;
+  margin-right: @list-horizontal-spacing;
+  &:last-of-type {margin-right: 0;}
+  padding: @list-padding;
+  background: @color-list-background;
+  border-radius: @list-border-radius;
+  header {
+    font-weight: bold;
+  }
+}
+
+.list-item {
+  margin-top: @list-item-vertical-spacing;
+  padding: @list-item-padding;
+  background: @color-white;
+  border-radius: @list-border-radius;;
+}

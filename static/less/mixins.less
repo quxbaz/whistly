@@ -1,16 +1,11 @@
-.d(@color:#ff0000) {
+.d(@color:#f00) {
   outline: 1px solid @color;
 }
 
 .d {.d;}
 
-.b(@color:#ff0000) {
-  border: 1px solid @color;
-}
-
-.unspaced {
-  margin: 0;
-  padding: 0;
+.b(@color:#f00) {
+  background: @color;
 }
 
 .col {
@@ -18,36 +13,9 @@
   vertical-align: top;
 }
 
-.cols {
+.squeeze {
   font-size: 0;
-  > * {
-    .col;
-    font-size: @base-font-size;
-  }
-}
-
-.squeeze(@font-size:@base-font-size) {
-  font-size: 0;
-  > * {
-    font-size: @font-size;
-  }
-}
-
-.collapse {
-  font-size: 0;
-  // white-space: nowrap;
-  > * {
-    .col;
-    font-size: @base-font-size;
-  }
-}
-
-.spread {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  > * {font-size: @base-font-size;}
 }
 
 .transition(@transition) {
@@ -65,7 +33,16 @@
   padding: 24px;
 }
 
-.nospace() {
+.nospace {
   margin: 0;
   padding: 0;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+.hide {
+  display: none !important;
 }
