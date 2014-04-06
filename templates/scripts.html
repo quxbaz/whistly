@@ -8,26 +8,12 @@
 <script type="text/javascript" src="/static/lib/underscore.string/dist/underscore.string.min.js"></script>
 <script type="text/javascript" src="/static/lib/pillarjs/pillar.js"></script>
 
-{# My extensions #}
-{# --- #}
-
-{# Modules #}
-
 {# Always first to load #}
 <script type="text/javascript" src="/static/js/init.js"></script>
 
-{# App #}
-<script type="text/javascript" src="/static/js/app/app.js"></script>
-<script type="text/javascript" src="/static/js/app/route.js"></script>
-<script type="text/javascript" src="/static/js/app/controller.js"></script>
-<script type="text/javascript" src="/static/js/app/view.js"></script>
+{% for script in scripts %}
+  <script type="text/javascript" src="/{{script}}"></script>
+{% endfor %}
 
 {# Always last to load #}
 <script type="text/javascript" src="/static/js/main.js"></script>
-
-{# Common #}
-<!--  -->
-
-{# Gui #}
-<script type="text/javascript" src="/static/js/app/gui/controller.js"></script>
-<script type="text/javascript" src="/static/js/app/gui/view.js"></script>
