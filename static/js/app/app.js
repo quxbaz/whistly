@@ -11,12 +11,16 @@ define('App', function() {
     LOG_TRANSITIONS: true
   });
 
-  App.ApplicationAdapter = DS.FixtureAdapter;
+  // App.ApplicationAdapter = DS.FixtureAdapter;
+
+  App.ApplicationSerializer = DS.LSSerializer.extend();
+  App.ApplicationAdapter = DS.LSAdapter.extend({
+    namespace: 'list-app'
+  });
 
   App.Store = DS.Store.extend({
     revision : 13,
-    // adapter  : 'DS.fixtureAdapter'
-    adapter  : DS.FixtureAdapter
+    // adapter  : DS.FixtureAdapter
   });
 
   App.Router.map(function() {
