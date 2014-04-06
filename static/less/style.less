@@ -1,11 +1,17 @@
 @import "vars";
+@import "font";
 @import "colors";
 @import "mixins";
 @import "util";
 
-* {
+*, *:before, *:after {
   -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+header {
+  display: block;
 }
 
 html, body, main {
@@ -14,104 +20,12 @@ html, body, main {
 
 body {
   margin: 0;
-  font-family: helvetica, arial, sans-serif;
-  background: @bg;
+  font-family: @default-font;
+  font-size: @base-font-size;
+  line-height: @base-line-height;
+  background: @color-white;
 }
 
-#app {
-  .full;
-}
-
-.title {
-  margin-top: 0;
-}
-
-.work-well {
-  .squeeze;
-  height: 100%;
-}
-
-.gui {
-  .col;
-  .squeeze;
-  width: 69%;
-  height: 100%;
-  margin-left: 1%;
-  .padding;
-  .border;
-  .list {
-    .col;
-    width: 25%;
-    margin-bottom: 12px;
-    ul {
-      .nospace;
-    }
-    li {
-      .nospace;
-      list-style-type: none;
-    }
-  }
-  .list-item {}
-}
-
-// header {
-//   display: block;
-// }
-
-// main {
-//   position: relative;
-//   max-width: @width;
-//   width: 100%;
-//   margin: 0 auto;
-//   .collapse;
-//   h1 {
-//     font-size: @base-font-size * 3;
-//   }
-// }
-
-// .editor {
-
-//   .col;
-//   width: 30%;
-//   height: 100%;
-
-//   textarea {
-//     width: 100%;
-//     height: 100%;
-//     margin: 0;
-//     border: none;
-//   }
-
-//   .text-editor {
-//     width: 100%;
-//     height: 100%;
-//     margin: 0;
-//     padding: 24px;
-//     background: white;
-//   }
-
-// }
-
-// .gui {
-//   .col;
-//   width: 70%;
-// }
-
-// .lists {
-//   padding: 32px;
-//   .cols;
-// }
-
-// .list {
-//   // .d;
-//   width: 25%;
-//   margin-bottom: 32px;
-//   padding: 16px;
-//   .inner {
-//     padding: 16px;
-//     background: #fff;
-//   }
-// }
-
-// .line {
+// #app {
+//   .full;
 // }
