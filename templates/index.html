@@ -6,8 +6,8 @@
   <title>Textlist</title>
   <link rel="stylesheet/less" href="/static/lib/normalize/normalize.css" type="text/css" />
   <!-- <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css" type="text/css" media="screen" /> -->
-  <!-- <link rel="stylesheet/less" href="/static/less/style.less" type="text/css" /> -->
-  <!-- <script src="/static/lib/less/dist/less-1.7.0.min.js" type="text/javascript"></script> -->
+  <link rel="stylesheet/less" href="/static/less/style.less" type="text/css" />
+  <script src="/static/lib/less/dist/less-1.7.0.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -20,28 +20,21 @@
 
     <script type="text/x-handlebars" data-template-name="lists">
       {{#each}}
-        <div>{{title}}</div>
-        <ul>
-          {{#each this.items}}
-            <li>{{text}}</li>
-          {{/each}}
-        </ul>
+        {{view "list" contentBinding=this}}
       {{/each}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="list">
-      <header>
-        <strong>{{list.heading}}</strong>
-      </header>
+      <header>{{title}}</header>
       <ul>
-        {{#each line in list.lines}}
-          {{view App.ListItemView line=line}}
+        {{#each items}}
+          {{view "list-item" contentBinding=this}}
         {{/each}}
       </ul>
     </script>
 
     <script type="text/x-handlebars" data-template-name="list-item">
-      {{line}}
+      {{text}}
     </script>
 
   {% endraw %}

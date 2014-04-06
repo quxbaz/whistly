@@ -35,15 +35,20 @@ define('lists', function() {
 
   // Views
 
-  // App.ListView = Em.View.extend({
-  //   tagName: 'div',
-  //   classNames: ['list'],
-  //   templateName: 'list'
-  // });
+  App.ListsView = Em.View.extend({
+    classNames: ['lists'],
+    templateName: 'lists'
+  });
 
-  // App.ListItemView = Em.View.extend({
-  //   tagName: 'li',
-  //   templateName: 'list-item'
-  // });
+  App.ListView = Em.View.extend({
+    classNames: ['list'],
+    templateName: 'list'
+  });
+
+  App.ListItemView = Em.View.extend({
+    tagName: 'li',
+    classNames: ['list-item'],
+    templateName: 'list-item'
+  });
 
 });
