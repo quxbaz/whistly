@@ -5,6 +5,10 @@
 
 define('main', function() {
 
-  this.run('App', 'lists');
+  this.run(
+    'App',
+    'com/component',
+    'lists'
+  );
 
 });
