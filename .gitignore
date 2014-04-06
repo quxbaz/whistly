@@ -1,3 +1,5 @@
 .emacs.desktop.lock
 node_modules
 .webassets-cache
+static/cache
+*.swp
