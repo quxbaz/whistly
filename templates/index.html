@@ -19,6 +19,14 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="lists">
+      {{#each}}
+        <div>{{title}}</div>
+        <ul>
+          {{#each this.items}}
+            <li>{{text}}</li>
+          {{/each}}
+        </ul>
+      {{/each}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="list">

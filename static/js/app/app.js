@@ -7,17 +7,17 @@
 
 define('App', function() {
 
-  var App = Em.Application.create({
+  var App = window.App = Em.Application.create({
     LOG_TRANSITIONS: true
   });
 
-  window.App = App;
+  App.ApplicationAdapter = DS.FixtureAdapter;
 
   App.Store = DS.Store.extend({
     revision : 13,
+    // adapter  : 'DS.fixtureAdapter'
     adapter  : DS.FixtureAdapter
   });
-
 
   App.Router.map(function() {
     // Resources
