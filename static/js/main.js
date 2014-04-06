@@ -3,6 +3,10 @@
 */
 
 
-// Define a global pillar package.
-var pkg = new pillar.Package();
-pkg.global();
+define('main', function() {
+
+  this.run(
+    ['App', 'route', 'controller', 'view']
+  );
+
+});

@@ -5,11 +5,7 @@
 */
 
 
-var pkg = new pillar.Package();
-pkg.global();
-
-
-define('main', function() {
+define('App', function() {
 
   var App = Em.Application.create({
     LOG_TRANSITIONS: true
@@ -25,5 +21,7 @@ define('main', function() {
   // TODO: Move into another file.
   App.EditorController = Em.Controller.extend(editor.controller);
   App.EditorView = Em.View.extend(editor.view);
+
+  return App;
 
 });

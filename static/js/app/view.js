@@ -5,7 +5,11 @@
 */
 
 
-App.ApplicationView = Em.View.extend({
-  elementId: 'app',
-  templateName: 'application',
+define('view', function(App) {
+
+  App.ApplicationView = Em.View.extend({
+    elementId: 'app',
+    templateName: 'application',
+  });
+
 });

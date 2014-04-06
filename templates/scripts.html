@@ -14,16 +14,19 @@
 <!-- <script type="text/javascript" src="/static/ext/editor/controller.js"></script> -->
 <!-- <script type="text/javascript" src="/static/ext/editor/view.js"></script> -->
 
-{# Mine #}
-<script type="text/javascript" src="/static/js/init.js"></script>
-
 {# Modules #}
+
+{# Always first to load #}
+<script type="text/javascript" src="/static/js/init.js"></script>
 
 {# App #}
 <script type="text/javascript" src="/static/js/app/app.js"></script>
 <script type="text/javascript" src="/static/js/app/route.js"></script>
 <script type="text/javascript" src="/static/js/app/controller.js"></script>
 <script type="text/javascript" src="/static/js/app/view.js"></script>
+
+{# Always last to load #}
+<script type="text/javascript" src="/static/js/main.js"></script>
 
 {# Common #}
 <!--  -->
