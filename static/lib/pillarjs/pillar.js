@@ -404,7 +404,7 @@ var pillar = (function() {
 
   function Package(config) {
 
-    if (typeof config !== 'undefined')
+    if (typeof config === 'undefined')
       var config = {};
 
     this.modules = {};
@@ -418,6 +418,9 @@ var pillar = (function() {
     this.nthModuleLoaded = 0;
 
     this.config(config);
+
+    if (config.global)
+      this.global();
 
     // Modules being loaded. Used to detect circular imports.
     this.loading = [];
