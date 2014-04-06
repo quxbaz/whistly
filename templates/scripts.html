@@ -1,9 +1,3 @@
-{# Inline scripts #}
-<script>
-  function log() {return console.log.apply(console, arguments)}
-  function dir() {return console.dir.apply(console, arguments)}
-</script>
-
 {# Library #}
 <script type="text/javascript" src="/static/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="/static/lib/handlebars/handlebars.js"></script>
@@ -12,12 +6,15 @@
 <script type="text/javascript" src="/static/lib/moment/moment.js"></script>
 <script type="text/javascript" src="/static/lib/underscore/underscore.js"></script>
 <script type="text/javascript" src="/static/lib/underscore.string/dist/underscore.string.min.js"></script>
+<script type="text/javascript" src="/static/lib/pillarjs/pillar.js"></script>
 
 {# My extensions #}
+<script type="text/javascript" src="/static/ext/editor/reader.js"></script>
 <script type="text/javascript" src="/static/ext/editor/editor.js"></script>
+<!-- <script type="text/javascript" src="/static/ext/editor/controller.js"></script> -->
+<!-- <script type="text/javascript" src="/static/ext/editor/view.js"></script> -->
 
 {# Mine #}
-<script type="text/javascript" src="/static/js/util/reader.js"></script>
 <script type="text/javascript" src="/static/js/init.js"></script>
 
 {# Modules #}
