@@ -1,22 +1,26 @@
 /*
   local variables:
-  buffer-name: "gui/view"
+  buffer-name: "lists/view"
   end:
 */
 
 
-App.GuiView = Em.View.extend({
-  templateName: 'gui',
-  classNames: ['gui']
-});
+define('lists/view', function(App) {
 
-App.ListView = Em.View.extend({
-  tagName: 'div',
-  classNames: ['list'],
-  templateName: 'list'
-});
+  App.GuiView = Em.View.extend({
+    templateName: 'gui',
+    classNames: ['gui']
+  });
 
-App.ListItemView = Em.View.extend({
-  tagName: 'li',
-  templateName: 'list-item'
+  App.ListView = Em.View.extend({
+    tagName: 'div',
+    classNames: ['list'],
+    templateName: 'list'
+  });
+
+  App.ListItemView = Em.View.extend({
+    tagName: 'li',
+    templateName: 'list-item'
+  });
+
 });

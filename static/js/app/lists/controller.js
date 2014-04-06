@@ -1,19 +1,23 @@
 /*
   local variables:
-  buffer-name: "gui/controller"
+  buffer-name: "lists/controller"
   end:
 */
 
 
-App.GuiController = Em.Controller.extend({
+define('lists/controller', function(App) {
 
-  tokens: [],
+  App.GuiController = Em.Controller.extend({
 
-  actions: {
-    textChanged: function(tokens) {
-      this.set('tokens', tokens);
-      // _.each(tokens, function() {});
+    tokens: [],
+
+    actions: {
+      textChanged: function(tokens) {
+        this.set('tokens', tokens);
+        // _.each(tokens, function() {});
+      }
     }
-  }
+
+  });
 
 });
