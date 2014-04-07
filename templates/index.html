@@ -4,17 +4,17 @@
 
 <head>
 
-  <title>Textlist</title>
+  <title>List</title>
 
   <link rel="stylesheet/less" href="/static/lib/normalize/normalize.css" type="text/css" />
-  <!-- <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css" type="text/css" media="screen" /> -->
+  {# <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css" type="text/css" media="screen" /> #}
 
-  {% assets "style" %}
+  {# {% assets "style" %}
     <link rel="stylesheet" href="{{ASSET_URL}}" type="text/css" />
-  {% endassets %}
+  {% endassets %} #}
 
-  <!-- <link rel="stylesheet/less" href="/static/less/style.less" type="text/css" /> -->
-  <!-- <script src="/static/lib/less/dist/less-1.7.0.min.js" type="text/javascript"></script> -->
+  <link rel="stylesheet/less" href="/static/less/style.less" type="text/css" />
+  <script src="/static/lib/less/dist/less-1.7.0.min.js" type="text/javascript"></script>
 
 </head>
 
@@ -28,8 +28,21 @@
 
     <script type="text/x-handlebars" data-template-name="lists">
       {{#each}}
-        {{view "list" content=this}}
+        {{render "list" this}}
       {{/each}}
+      {{render "add-list"}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="add-list">
+      {{#unless view.isAddingNewList}}
+        <a {{action "addNewList" target="view"}}>Add a list...</a>
+      {{else}}
+        <form {{action "saveNewList" on="submit" target="view"}}>
+          {{focus-input value=view.title placeholder="Title"}}
+          <button {{action "cancel" target="view"}} type="button">Cancel</button>
+          <button type="submit">Save</button>
+        </form>
+      {{/unless}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="list">
@@ -39,6 +52,9 @@
           {{view "list-item" content=this}}
         {{/each}}
       </ul>
+      <div class="list-controls">
+        <button {{action "archive"}}>Remove list</button>
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="list-item">

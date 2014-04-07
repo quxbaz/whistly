@@ -7,8 +7,6 @@
 
 define('lists', function() {
 
-  var fixture = this.needs('lists/fixture');
-
   App.Router.map(function() {
     this.resource('lists');
   });
@@ -30,10 +28,56 @@ define('lists', function() {
     text: DS.attr('string')
   });
 
-  App.List.FIXTURES = fixture.list;
-  App.ListItem.FIXTURES = fixture.list_items;
+  // Controller
+
+  App.ListsController = Em.ArrayController.extend({});
+
+  App.AddListController = Em.Controller.extend({
+    actions: {
+      saveNewList: function(title) {
+        this.get('store').createRecord('list', {
+          title: title
+        }).save();
+      }
+    }
+  });
+
+  App.ListController = Em.ObjectController.extend({
+    actions: {
+      archive: function() {
+        var list = this.get('model');
+        list.deleteRecord();
+        list.save();
+      }
+    }
+  });
 
   // Views
+
+  App.AddListView = Em.View.extend({
+    classNames: ['add-list'],
+    templateName: 'add-list',
+    isAddingNewList: false,
+    title: '',
+    titleIsEmpty: function() {
+      return this.get('title').length === 0;
+    },
+    actions: {
+      addNewList: function() {
+        this.set('isAddingNewList', true);
+      },
+      cancel: function() {
+        this.set('isAddingNewList', false);
+      },
+      saveNewList: function(event) {
+        if (this.titleIsEmpty())
+          return;
+        this.get('controller').send('saveNewList', this.get('title'));
+        this.set('isAddingNewList', false);
+        this.set('title', '');
+      }
+    }
+  });
 
   App.ListsView = Em.View.extend({
     classNames: ['lists'],

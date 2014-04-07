@@ -1,11 +1,18 @@
+// Lists
 @list-width: 240px;
 @list-horizontal-spacing: 8px;
 @list-vertical-spacing: 8px;
 @list-padding: 12px;
 @list-border-radius: @common-border-radius;
 @color-list-background: #dadada;
+
+// List items
 @list-item-padding: 4px 8px;
 @list-item-vertical-spacing: 8px;
+
+// Add list
+@add-list-background: rgba(200, 200, 200, 0.6);
+
 
 .lists {
   .squeeze;
@@ -18,9 +25,11 @@
   // margin-left: @list-horizontal-spacing;
   padding: @list-padding;
   font-weight: bold;
-  background: @color-list-background;
+  background: @add-list-background;
   border-radius: @list-border-radius;
-  button {margin-top: 4px;}
+  button {margin-top: @list-item-vertical-spacing;}
+  a {.col; width: 100%;}
+  input {width: 100%;}
 }
 
 .list {
@@ -42,4 +51,8 @@
   padding: @list-item-padding;
   background: @color-white;
   border-radius: @list-border-radius;;
+}
+
+.list-controls {
+  margin-top: @list-item-vertical-spacing;
 }
