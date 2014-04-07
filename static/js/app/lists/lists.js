@@ -28,9 +28,7 @@ define('lists', function() {
     text: DS.attr('string')
   });
 
-  // Controller
-
-  App.ListsController = Em.ArrayController.extend({});
+  // Controllers
 
   App.AddListController = Em.Controller.extend({
     actions: {
@@ -41,6 +39,8 @@ define('lists', function() {
       }
     }
   });
+
+  App.ListsController = Em.ArrayController.extend({});
 
   App.ListController = Em.ObjectController.extend({
     actions: {
