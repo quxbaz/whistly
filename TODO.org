@@ -106,5 +106,6 @@
   - [ ] Lists should be archived first before deleting.
   - [ ] Add items.
   - [ ] Add esc cancelling when adding a list.
+  - [ ] Listen to the escape key on the body element.
 ** Issue
    - Redo module project organization. Other modules can't be loaded.
