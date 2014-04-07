@@ -101,5 +101,10 @@
   - [ ] Set up ember-compatible templating system (compile template?).
   - [ ] User bower for libs
   - [ ] Create auth front-end and backend.
+  - [ ] Go over TODO.
+  - [ ] Add archiving animation to lists.
+  - [ ] Lists should be archived first before deleting.
+  - [ ] Add items.
+  - [ ] Add esc cancelling when adding a list.
 ** Issue
    - Redo module project organization. Other modules can't be loaded.
