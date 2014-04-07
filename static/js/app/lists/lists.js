@@ -5,7 +5,7 @@
 */
 
 
-define('lists', function() {
+define('lists', function(App) {
 
   App.Router.map(function() {
     this.resource('lists');
