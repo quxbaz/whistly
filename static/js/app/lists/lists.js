@@ -56,6 +56,7 @@ define('lists', function(App) {
 
   App.AddListView = Em.View.extend({
     classNames: ['add-list'],
+    classNameBindings: ['isAddingNewList'],
     templateName: 'add-list',
     isAddingNewList: false,
     title: '',
