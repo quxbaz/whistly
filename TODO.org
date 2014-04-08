@@ -85,27 +85,18 @@
    Look at other list apps (web and mobile)
 
 * Technical
-  - [ ] Build a requirements loader.
-  - [ ] Stop using requirejs (slowing down development too much!)
+  - [X] Add esc cancelling when adding a list.
+  - [X] Listen to the escape key on the body element.
+  - [X] Build a requirements loader.
+  - [X] Stop using requirejs (slowing down development too much!)
+  - [X] User bower for libs.
+  - [X] Go over TODO.
   - [ ] Start writing unit tests.
   - [ ] Set up an automatic test runner.
-  - [ ] Start writing tests for reader.
-  - [ ] Move reader tokenizer to new module.
-  - [ ] Think about performance!
-    + [ ] How to avoid rerendering every list when a single character changes.
-    + [ ] Write filterMap function. Filters then maps.
-  - [ ] Address performance issues! You need a good algorithm.
-    + [ ] Try perhaps a nice diff algorithm?
-  - [ ] Editor is mapped to gui. Now map the gui to the editor.
-  - [ ] Do performance/load testing.
-  - [ ] Set up ember-compatible templating system (compile template?).
-  - [ ] User bower for libs
-  - [ ] Create auth front-end and backend.
-  - [ ] Go over TODO.
-  - [ ] Add archiving animation to lists.
+  - [ ] Set up templating system.
+  - [ ] Set up authentication on front and back-end.
+  - [ ] Animate lists archiving.
   - [ ] Lists should be archived first before deleting.
-  - [ ] Add items.
-  - [ ] Add esc cancelling when adding a list.
-  - [ ] Listen to the escape key on the body element.
-** Issue
-   - Redo module project organization. Other modules can't be loaded.
+  - [ ] Add items to lists.
+** NOW
+   - [ ] Sign up for private micro github account and push to github.
