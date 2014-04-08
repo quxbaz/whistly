@@ -27,16 +27,6 @@ define('App', function() {
     // Resources
   });
 
-  App.IndexRoute = Em.Route.extend({
-    renderTemplate: function() {
-      this.render();
-      // this.render('gui', {
-      //   into: 'application',
-      //   outlet: 'gui'
-      // });
-    }
-  });
-
   App.ApplicationView = Em.View.extend({
     elementId: 'app',
     templateName: 'application',
