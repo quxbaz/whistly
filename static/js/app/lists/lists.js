@@ -7,6 +7,8 @@
 
 define('lists', function(App) {
 
+  var mixin = this.needs('com/mixin');
+
   App.Router.map(function() {
     this.resource('lists');
   });
@@ -54,7 +56,7 @@ define('lists', function(App) {
 
   // Views
 
-  App.AddListView = Em.View.extend({
+  App.AddListView = Em.View.extend(mixin.view.WatchForEscape, {
     classNames: ['add-list'],
     classNameBindings: ['isAddingNewList'],
     templateName: 'add-list',
@@ -63,19 +65,28 @@ define('lists', function(App) {
     titleIsEmpty: function() {
       return this.get('title').length === 0;
     },
+    cancel: function() {
+      this.set('isAddingNewList', false);
+    },
+    reset: function() {
+      this.set('isAddingNewList', false);
+      this.set('title', '');
+    },
+    hitEscapeKey: function() {
+      this.cancel();
+    },
     actions: {
       addNewList: function() {
         this.set('isAddingNewList', true);
       },
-      cancel: function() {
-        this.set('isAddingNewList', false);
+      cancelAdding: function() {
+        this.cancel();
       },
       saveNewList: function(event) {
         if (this.titleIsEmpty())
           return;
         this.get('controller').send('saveNewList', this.get('title'));
-        this.set('isAddingNewList', false);
-        this.set('title', '');
+        this.reset();
       }
     }
   });
