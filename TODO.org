@@ -53,6 +53,7 @@
    - Mobile widget
    - Adjustable column numbers column-space width.
 ** Potential names
+   Whistly [working name]
    Listmaster
    Masterlist
    Listlist
