@@ -39,7 +39,7 @@
       {{else}}
         <form {{action "saveNewList" on="submit" target="view"}}>
           {{focus-input value=view.title placeholder="Title"}}
-          <button {{action "cancel" target="view"}} type="button">Cancel</button>
+          <button {{action "cancelAdding" target="view"}} type="button">Cancel</button>
           <button type="submit">Save</button>
         </form>
       {{/unless}}
