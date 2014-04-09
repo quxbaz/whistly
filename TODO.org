@@ -89,3 +89,4 @@
    - [ ] Alter naming scheme. Trello/Board = List/Workspace. So, changes "Lists" -> "Workspace".
    - [ ] Sign up for private micro github account and push to github.
    - [ ] Think of a project name.
+   - [ ] Implement watchers.
