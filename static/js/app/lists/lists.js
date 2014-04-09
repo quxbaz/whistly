@@ -72,7 +72,7 @@ define('lists', function(App) {
       this.set('isAddingNewList', false);
       this.set('title', '');
     },
-    hitEscapeKey: function() {
+    watchForEscape: function() {
       this.cancel();
     },
     actions: {

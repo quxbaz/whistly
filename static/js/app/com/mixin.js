@@ -7,27 +7,45 @@
 
 define('com/mixin', function() {
 
-  var mixin = {route: {}, controller: {}, view: {}};
+  var util = this.needs('com/util');
+  var mixin = {route: {}, controller: {}, view: {}, component: {}};
+
+  /*
+
+    TODO: Implement this.
+
+    // In view properties
+
+    watchers: ['escapeKey', 'click']
+
+    watcherHandlers: {
+      escapeKey: function(event) {
+        ...
+      },
+      click: function(event) {
+        ...
+      }
+    }
+
+  */
 
   mixin.view.WatchForEscape = Em.Mixin.create({
-    didInsertElement: function() {
-      var that = this;
-      var callback = function(event) {
+
+    _watchForEscape: function() {
+
+      var detach = util.bindEvent(document, 'keydown', function(event) {
         var key = event.keyCode || event.which;
         if (key === 27) {
-          if (!that.hitEscapeKey)
-            throw "You need to define a [hitEscapeKey] method in your view.";
-          that.hitEscapeKey.apply(that, arguments);
+          if (!this.watchForEscape)
+            throw "You need to define a [watchForEscape] method in your view.";
+          this.watchForEscape.apply(this, arguments);
         }
-      };
-      $(document).on('keydown', callback);
-      this.offWatchForEscape = function() {
-        $(document).off('keydown', callback);
-      };
-    },
-    willDestroyElement: function() {
-      if (this.offWatchForEscape) this.offWatchForEscape();
-    }
+      }, this);
+
+      this.one('willDestroyElement', detach);
+
+    }.on('didInsertElement')
+
   });
 
   return mixin;
