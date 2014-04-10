@@ -52,6 +52,8 @@
      + Deleting
    - Mobile widget
    - Adjustable column numbers column-space width.
+   - Sorting
+   - Show items decaying by time
 ** Potential names
    Whistly [working name]
    Listmaster
@@ -92,3 +94,4 @@
    - [ ] Think of a project name.
    - [ ] Implement watchers. Watchers are useful for capturing events
          on elements outside a view that affect that view.
+   - [ ] Setup SSH key on bitbucket.
