@@ -189,6 +189,9 @@
     - Disallow certain characters so that namespacing works. Ex: space, comma, colon
     - Optimize for file size (reduce repetition - add each function).
     - Make compatible on all browsers (IE6+).
+    - Allow unnamed packages.
+    - Allow runOnDefine/load option on packages like this:
+        new Package({runOnLoad: 'App'})
 
 */
 
@@ -368,38 +371,48 @@ var pillar = (function() {
     }
   }
 
-  function parseNeeds(moduleNames) {
+  // Always returns a flat array of module names.
+  function parseNeeds(moduleNames, callingModule) {
 
-    if (arguments.length > 1)
-      moduleNames = toArr(arguments);
+    var parse = function(moduleNames) {
+      if (arguments.length > 1)
+        var moduleNames = toArr(arguments);
 
-    if (typeof moduleNames === 'string') {
+      if (typeof moduleNames === 'string') {
 
-      var split = moduleNames.split(/\s+/);
-      var namespace = first(split);
+        var split = moduleNames.split(/\s+/);
+        var namespace = first(split);
 
-      if (last(namespace) === ':' && split.length > 1) {
-        var namespace = namespace.replace(/:$/, '/');
-        return map(split.slice(1), function(module) {
-          return namespace + module;
-        });
+        if (last(namespace) === ':' && split.length > 1) {
+          var namespace = namespace.replace(/:$/, '/');
+          return map(split.slice(1), function(moduleName) {
+            return namespace + moduleName;
+          });
+        }
+
+        return split;
+
       }
 
-      return split;
+      if (isArray(moduleNames)) {
+        var results = [];
+        for (var i=0; i < moduleNames.length; i++)
+          results = results.concat(parse(moduleNames[i]));
+        return results;
+      }
+    };
 
-    }
+    var namespaceWithCaller = function(needs) {
+      return map(needs, function(moduleName) {
+        return moduleName.replace(/^\.\//, callingModule + '/');
+      });
+    };
 
-    if (isArray(moduleNames)) {
-      var results = [];
-      for (var i=0; i < moduleNames.length; i++)
-        results = results.concat(parseNeeds(moduleNames[i]));
-      return results;
-    }
+    var results = parse.apply(null, moduleNames);
+    if (typeof callingModule !== 'undefined')
+      results = namespaceWithCaller(results);
+    return results;
 
-  }
-
-  function log_parseNeeds() {
-    console.log(toArr(arguments), parseNeeds.apply(null, arguments));
   }
 
   function Package(config) {
@@ -470,14 +483,14 @@ var pillar = (function() {
         needs(['foo', 'bar'], 'qux');
         needs(['foo', 'bar'], ['qux']);
     */
-    needs: function(moduleNames) {
-      var modules = parseNeeds.apply(null, arguments);
+    needs: function(moduleNames, callingModule) {
+      var modules = parseNeeds.call(null, moduleNames, callingModule);
       var results = {};
       for (var i=0; i < modules.length; i++)
         results[modules[i]] = this.load(modules[i]);
-      if (arguments.length === 1
-          && typeof moduleNames === 'string'
-          && moduleNames.split(/\s+/).length === 1)
+      if (moduleNames.length === 1
+          && typeof first(moduleNames) === 'string'
+          && first(moduleNames).split(/\s+/).length === 1)
         return values(results)[0]
       else
         return results;
@@ -521,7 +534,7 @@ var pillar = (function() {
       the return value.
     */
     run: function() {
-      this.needs.apply(this, arguments);
+      this.needs.call(this, arguments);
       return undefined;
     },
 
@@ -563,7 +576,7 @@ var pillar = (function() {
 
       var module = this.addModule(moduleName, fn, merge({}, merge(this.defaultModuleOptions, options)));
       if (moduleName === 'main' || module.options.loadNow)
-        this.needs(moduleName);
+        this.needs([moduleName]);
 
       return this;
 
@@ -649,11 +662,11 @@ var pillar = (function() {
     },
 
     needs: function() {
-      return this.package.needs.apply(this.package, arguments);
+      return this.package.needs.call(this.package, arguments, this.moduleName);
     },
 
     run: function() {
-      return this.package.run.apply(this.package, arguments);
+      return this.package.run.call(this.package, arguments, this.moduleName);
     }
 
   });
