@@ -73,26 +73,20 @@
    Look at other list apps (web and mobile).
    Look at as many list apps as you can.
 
+* Later
+  - [ ] Think of a project name.
+
 * Technical
-  - [X] Add esc cancelling when adding a list.
-  - [X] Listen to the escape key on the body element.
-  - [X] Build a requirements loader.
-  - [X] Stop using requirejs (slowing down development too much!)
-  - [X] User bower for libs.
-  - [X] Go over TODO.
   - [ ] Start writing unit tests.
   - [ ] Set up an automatic test runner.
   - [ ] Set up templating system.
   - [ ] Set up authentication on front and back-end.
   - [ ] Animate lists archiving.
-  - [ ] Lists should be archived first before deleting.
   - [ ] Get basic atomic undo/redo system working. Make everything
         work off this. Use a global Action Store?
-** Now
-   - [ ] Sign up for private micro github account and push to github.
-   - [ ] Get items working.
-   - [ ] Think of a project name.
-   - [X] Implement watchers. Watchers are useful for capturing events
-         on elements outside a view that affect that view.
-   - [ ] Setup SSH key on bitbucket.
-   - [ ] Get testing working.
+
+* Now
+  - [ ] Sign up for private micro github account and push to github.
+  - [ ] Get items working.
+  - [ ] Setup SSH key on bitbucket.
+  - [ ] Get testing working.
