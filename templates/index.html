@@ -49,15 +49,18 @@
       <header>{{title}}</header>
       <ul>
         {{#each items}}
-          {{view "list-item" content=this}}
+          {{render "note" this}}
         {{/each}}
       </ul>
       <div class="list-controls">
-        <a {{action "archive"}}>Archive</a>
+        <a {{action "addNewNote"}}>Add new note...</a>
+      </div>
+      <div class="list-controls">
+        <a {{action "archiveList"}}>Archive</a>
       </div>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="list-item">
+    <script type="text/x-handlebars" data-template-name="note">
       {{text}}
     </script>
 

@@ -87,6 +87,6 @@
 
 * Now
   - [ ] Sign up for private micro github account and push to github.
-  - [ ] Get items working.
   - [ ] Setup SSH key on bitbucket.
   - [ ] Get testing working.
+  - [ ] Get items working. [NOW]

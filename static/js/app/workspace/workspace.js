@@ -86,15 +86,17 @@ define('workspace', function(App, outerWatcher) {
 
   App.List = DS.Model.extend({
     title: DS.attr('string'),
-    items: DS.hasMany('list_item')
+    note: DS.hasMany('note')
   });
 
   App.ListController = Em.ObjectController.extend({
     actions: {
-      archive: function() {
+      archiveList: function() {
         var list = this.get('model');
         list.deleteRecord();
         list.save();
+      },
+      addNewNote: function() {
       }
     }
   });
@@ -104,16 +106,16 @@ define('workspace', function(App, outerWatcher) {
     templateName: 'list'
   });
 
-  // List item
+  // Note
 
-  App.ListItem = DS.Model.extend({
+  App.Note = DS.Model.extend({
     text: DS.attr('string')
   });
 
-  App.ListItemView = Em.View.extend({
+  App.NoteView = Em.View.extend({
     tagName: 'li',
-    classNames: ['list-item'],
-    templateName: 'list-item'
+    classNames: ['note'],
+    templateName: 'note'
   });
 
 });

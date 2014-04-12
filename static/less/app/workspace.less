@@ -1,4 +1,4 @@
-// Workspace
+// Lists
 @list-width: 240px;
 @list-horizontal-spacing: 8px;
 @list-vertical-spacing: 8px;
@@ -6,9 +6,9 @@
 @list-border-radius: @common-border-radius;
 @color-list-background: #ececec;
 
-// List items
-@list-item-padding: 4px 8px;
-@list-item-vertical-spacing: 8px;
+// Notes
+@note-padding: 4px 8px;
+@note-vertical-spacing: 8px;
 
 // Add list
 @add-list-background: rgba(200, 200, 200, 0.6);
@@ -38,7 +38,7 @@
     height: 100%;
     padding: @list-padding;
   }
-  button {margin-top: @list-item-vertical-spacing;}
+  button {margin-top: @note-vertical-spacing;}
   input {width: 100%;}
 }
 
@@ -56,13 +56,13 @@
   }
 }
 
-.list-item {
-  margin-top: @list-item-vertical-spacing;
-  padding: @list-item-padding;
+.note {
+  margin-top: @note-vertical-spacing;
+  padding: @note-padding;
   background: @color-white;
   border-radius: @list-border-radius;;
 }
 
 .list-controls {
-  margin-top: @list-item-vertical-spacing;
+  margin-top: @note-vertical-spacing;
 }
