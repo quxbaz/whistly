@@ -5,7 +5,7 @@
 */
 
 
-define('lists', function(App) {
+define('lists', function(App, outerWatcher) {
 
   var mixin = this.needs('com/mixin');
 
@@ -56,7 +56,7 @@ define('lists', function(App) {
 
   // Views
 
-  App.AddListView = Em.View.extend(mixin.view.WatchForEscape, {
+  App.AddListView = Em.View.extend(outerWatcher.mixin, {
     classNames: ['add-list'],
     classNameBindings: ['isAddingNewList'],
     templateName: 'add-list',
@@ -72,9 +72,6 @@ define('lists', function(App) {
       this.set('isAddingNewList', false);
       this.set('title', '');
     },
-    watchForEscape: function() {
-      this.cancel();
-    },
     actions: {
       addNewList: function() {
         this.set('isAddingNewList', true);
@@ -87,6 +84,16 @@ define('lists', function(App) {
           return;
         this.get('controller').send('saveNewList', this.get('title'));
         this.reset();
+      }
+    },
+    watchEvents: {
+      outsideClick: function() {
+        if (this.get('isAddingNewList'))
+          this.cancel();
+      },
+      escapeKey: function() {
+        if (this.get('isAddingNewList'))
+          this.cancel();
       }
     }
   });

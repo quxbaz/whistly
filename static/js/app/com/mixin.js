@@ -10,25 +10,6 @@ define('com/mixin', function() {
   var util = this.needs('com/util');
   var mixin = {route: {}, controller: {}, view: {}, component: {}};
 
-  /*
-
-    TODO: Implement this.
-
-    // In view properties
-
-    watchers: ['escapeKey', 'click']
-
-    watcherHandlers: {
-      escapeKey: function(event) {
-        ...
-      },
-      click: function(event) {
-        ...
-      }
-    }
-
-  */
-
   mixin.view.WatchForEscape = Em.Mixin.create({
 
     _watchForEscape: function() {

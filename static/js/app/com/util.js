@@ -20,6 +20,16 @@ define('com/util', function() {
     };
   };
 
+  util.dict = function(key, val) {
+    var d = {};
+    d[key] = val;
+    return d;
+  };
+
   return util;
 
+});
+
+define('util', function() {
+  return this.needs('com/util');
 });
