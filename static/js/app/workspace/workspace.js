@@ -13,24 +13,22 @@ define('workspace', function(App, outerWatcher) {
     this.resource('workspace');
   });
 
+  // Workspace
+
   App.WorkspaceRoute = Em.Route.extend({
     model: function() {
       return this.store.find('list');
     }
   });
 
-  // Models
+  App.WorkspaceController = Em.ArrayController.extend({});
 
-  App.List = DS.Model.extend({
-    title: DS.attr('string'),
-    items: DS.hasMany('list_item')
+  App.WorkspaceView = Em.View.extend({
+    classNames: ['workspace'],
+    templateName: 'workspace'
   });
 
-  App.ListItem = DS.Model.extend({
-    text: DS.attr('string')
-  });
-
-  // Controllers
+  // Add list
 
   App.AddListController = Em.Controller.extend({
     actions: {
@@ -41,20 +39,6 @@ define('workspace', function(App, outerWatcher) {
       }
     }
   });
-
-  App.WorkspaceController = Em.ArrayController.extend({});
-
-  App.ListController = Em.ObjectController.extend({
-    actions: {
-      archive: function() {
-        var list = this.get('model');
-        list.deleteRecord();
-        list.save();
-      }
-    }
-  });
-
-  // Views
 
   App.AddListView = Em.View.extend(outerWatcher.mixin, {
     classNames: ['add-list'],
@@ -98,14 +82,32 @@ define('workspace', function(App, outerWatcher) {
     }
   });
 
-  App.WorkspaceView = Em.View.extend({
-    classNames: ['workspace'],
-    templateName: 'workspace'
+  // List
+
+  App.List = DS.Model.extend({
+    title: DS.attr('string'),
+    items: DS.hasMany('list_item')
+  });
+
+  App.ListController = Em.ObjectController.extend({
+    actions: {
+      archive: function() {
+        var list = this.get('model');
+        list.deleteRecord();
+        list.save();
+      }
+    }
   });
 
   App.ListView = Em.View.extend({
     classNames: ['list'],
     templateName: 'list'
+  });
+
+  // List item
+
+  App.ListItem = DS.Model.extend({
+    text: DS.attr('string')
   });
 
   App.ListItemView = Em.View.extend({
