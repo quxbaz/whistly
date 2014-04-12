@@ -55,18 +55,19 @@
    - Sorting
    - Show items decaying by time
 ** Potential names
-   Whistly [working name]
-   Listmaster
-   Masterlist
-   Listlist
-   Doublelist
-   Whisk
-   Plainlist
-   Plain Old List
-   Lister
-   Todo
-   Text
-   Plain
+   The name should have a degree of seriousness in it to reflect its application.
+   - Whistly [working name]
+   - Listmaster
+   - Masterlist
+   - Listlist
+   - Doublelist
+   - Whisk
+   - Plainlist
+   - Plain Old List
+   - Lister
+   - Todo
+   - Text
+   - Plain
 ** Ideas
    Look at Trello and Google Tasks.
    Look at other list apps (web and mobile).
@@ -85,13 +86,14 @@
   - [ ] Set up authentication on front and back-end.
   - [ ] Animate lists archiving.
   - [ ] Lists should be archived first before deleting.
-  - [ ] Add items to lists.
   - [ ] Get basic atomic undo/redo system working. Make everything
         work off this. Use a global Action Store?
 ** NOW
    - [ ] Alter naming scheme. Trello/Board = List/Workspace. So, changes "Lists" -> "Workspace".
    - [ ] Sign up for private micro github account and push to github.
+   - [ ] Get items working.
    - [ ] Think of a project name.
-   - [ ] Implement watchers. Watchers are useful for capturing events
+   - [X] Implement watchers. Watchers are useful for capturing events
          on elements outside a view that affect that view.
    - [ ] Setup SSH key on bitbucket.
+   - [ ] Get testing working.
