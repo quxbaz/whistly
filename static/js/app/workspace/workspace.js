@@ -1,19 +1,19 @@
 /*
   local variables:
-  buffer-name: "lists"
+  buffer-name: "workspace"
   end:
 */
 
 
-define('lists', function(App, outerWatcher) {
+define('workspace', function(App, outerWatcher) {
 
   var mixin = this.needs('com/mixin');
 
   App.Router.map(function() {
-    this.resource('lists');
+    this.resource('workspace');
   });
 
-  App.ListsRoute = Em.Route.extend({
+  App.WorkspaceRoute = Em.Route.extend({
     model: function() {
       return this.store.find('list');
     }
@@ -42,7 +42,7 @@ define('lists', function(App, outerWatcher) {
     }
   });
 
-  App.ListsController = Em.ArrayController.extend({});
+  App.WorkspaceController = Em.ArrayController.extend({});
 
   App.ListController = Em.ObjectController.extend({
     actions: {
@@ -98,9 +98,9 @@ define('lists', function(App, outerWatcher) {
     }
   });
 
-  App.ListsView = Em.View.extend({
-    classNames: ['lists'],
-    templateName: 'lists'
+  App.WorkspaceView = Em.View.extend({
+    classNames: ['workspace'],
+    templateName: 'workspace'
   });
 
   App.ListView = Em.View.extend({

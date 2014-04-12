@@ -88,8 +88,7 @@
   - [ ] Lists should be archived first before deleting.
   - [ ] Get basic atomic undo/redo system working. Make everything
         work off this. Use a global Action Store?
-** NOW
-   - [ ] Alter naming scheme. Trello/Board = List/Workspace. So, changes "Lists" -> "Workspace".
+** Now
    - [ ] Sign up for private micro github account and push to github.
    - [ ] Get items working.
    - [ ] Think of a project name.

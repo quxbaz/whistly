@@ -1,11 +1,11 @@
 /*
   local variables:
-  buffer-name: "lists/fixture"
+  buffer-name: "workspace/fixture"
   end:
 */
 
 
-define('lists/fixture', function() {
+define('workspace/fixture', function() {
 
   return {
 
