@@ -19,7 +19,8 @@ define('com/component', function(App, mixin) {
     input: function() {
       this._super.apply(this, arguments);
       var el = this.$()[0];
-      this.set('value', el.innerText || el.textContent);
+      var text = el.innerText || el.textContent;
+      this.set('value', text);
     },
     didInsertElement: function() {
       this._super.apply(this, arguments);
