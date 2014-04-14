@@ -105,7 +105,6 @@ define('workspace', function(App, outerWatcher) {
         this.set('noteBufferText', '');
       },
       cancelNote: function(note) {
-        // this.get();
         this.get('model.notes').then(function(notes) {
           notes.removeObject(note);
         });
@@ -128,13 +127,17 @@ define('workspace', function(App, outerWatcher) {
     init: function() {
       this.set('editMode', this.get('model.isNew'));
     },
+    trimText: function() {
+      return _.trim(this.get('text'));
+    }.property('text'),
     actions: {
       saveNote: function(addAnother) {
-        if (this.get('text').length === 0 || !this.get('editMode'))
+        if (this.get('trimText').length === 0 || !this.get('editMode'))
           return;
         if (typeof addAnother === 'undefined')
           var addAnother = false;
         this.set('editMode', false);
+        this.set('text', _this.get('trimText'));
         this.get('model').save();
         this.get('parentController').send('saveNote');
         if (addAnother)
@@ -145,7 +148,7 @@ define('workspace', function(App, outerWatcher) {
           this.get('parentController').send('cancelNote', this.get('model'));
       },
       input: function() {
-        this.get('parentController').send('updateNoteBufferText', this.get('text'));
+        this.get('parentController').send('updateNoteBufferText', this.get('trimText'));
       }
     }
   });
