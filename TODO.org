@@ -93,5 +93,4 @@
   - [ ] Get items working.
   - [ ] Minimize document-level watchers. Relocate Note document
         watchers onto list/workspace/application.
-  - [ ] Simplify things by removing buffer text.
   - [ ] Archive cards that you cancel over a certain character length.
