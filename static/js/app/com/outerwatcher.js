@@ -39,6 +39,14 @@ define('outerWatcher', function(util) {
         if ((event.keyCode || event.which) === 27)
           fn.apply(this, arguments);
       }, this);
+    },
+
+    // Watches for the enter key.
+    enterKey: function(fn) {
+      return util.bindEvent(document, 'keydown', function(event) {
+        if ((event.keyCode || event.which) === 13)
+          fn.apply(this, arguments);
+      }, this);
     }
 
   };
