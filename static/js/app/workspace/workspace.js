@@ -129,12 +129,16 @@ define('workspace', function(App, outerWatcher) {
       this.set('editMode', this.get('model.isNew'));
     },
     actions: {
-      saveNote: function() {
-        if (this.get('text').length === 0)
+      saveNote: function(addAnother) {
+        if (this.get('text').length === 0 || !this.get('editMode'))
           return;
+        if (typeof addAnother === 'undefined')
+          var addAnother = false;
         this.set('editMode', false);
         this.get('model').save();
         this.get('parentController').send('saveNote');
+        if (addAnother)
+          this.get('parentController').send('addNewNote');
       },
       cancel: function() {
         if (this.get('editMode'))
@@ -154,12 +158,26 @@ define('workspace', function(App, outerWatcher) {
     editMode: function() {
       return this.get('controller.editMode');
     }.property('controller.editMode'),
-    input: function() {
-      this.get('controller').send('input');
+    // It's better to use "input" here, but we need the keyCode so
+    // submit keys don't trigger.
+    keyDown: function(event) {
+      if ((event.keyCode || event.keyWhich) === 13
+          && !event.shiftKey) {
+        this.get('controller').send('input');
+      }
     },
     watchEvents: {
+      // Todo: This terminates immediately. Fix that so that this works.
+      // outsideClick: function() {
+      //   this.get('controller').send('cancel');
+      // },
       escapeKey: function() {
         this.get('controller').send('cancel');
+      },
+      enterKey: function(event) {
+        if (event.shiftKey)
+          return;
+        this.get('controller').send('saveNote', true);
       }
     }
   });
