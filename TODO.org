@@ -75,6 +75,7 @@
 
 * Later
   - [ ] Think of a project name.
+  - [ ] How to enable content encryption?
 
 * Technical
   - [ ] Start writing unit tests.
@@ -89,4 +90,4 @@
   - [ ] Sign up for private micro github account and push to github.
   - [ ] Setup SSH key on bitbucket.
   - [ ] Get testing working.
-  - [ ] Get items working. [NOW]
+  - [ ] Get items working.

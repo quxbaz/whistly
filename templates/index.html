@@ -29,17 +29,18 @@
     <script type="text/x-handlebars" data-template-name="workspace">
       {{#each}}
         {{render "list" this}}
+        {{!outlet "list"}}
       {{/each}}
       {{render "add-list"}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="add-list">
-      {{#unless view.isAddingNewList}}
-        <a {{action "addNewList" target="view"}}>Add a list...</a>
+      {{#unless isAddingNewList}}
+        <a {{action "addNewList"}}>Add a list...</a>
       {{else}}
-        <form {{action "saveNewList" on="submit" target="view"}}>
-          {{focus-input value=view.title placeholder="Title"}}
-          <button {{action "cancelAdding" target="view"}} type="button">Cancel</button>
+        <form {{action "saveNewList" on="submit"}}>
+          {{focus-input value=title placeholder="Title"}}
+          <button {{action "cancel"}} type="button">Cancel</button>
           <button type="submit">Save</button>
         </form>
       {{/unless}}
@@ -47,11 +48,9 @@
 
     <script type="text/x-handlebars" data-template-name="list">
       <header>{{title}}</header>
-      <ul>
-        {{#each items}}
-          {{render "note" this}}
-        {{/each}}
-      </ul>
+      {{#each notes}}
+        {{render "note" this}}
+      {{/each}}
       <div class="list-controls">
         <a {{action "addNewNote"}}>Add new note...</a>
       </div>
@@ -61,7 +60,17 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="note">
-      {{text}}
+      {{#if editMode}}
+        <form {{action "saveNote" on="submit"}}>
+          {{text-editable value=text focus=true}}
+          <div class="controls">
+            <button type="submit">Save</button>
+            <button {{action "cancel"}}>Cancel</button>
+          </div>
+        </form>
+      {{else}}
+        {{text}}
+      {{/if}}
     </script>
 
   {% endraw %}

@@ -21,7 +21,6 @@
   .col;
   width: @list-width;
   margin-bottom: @list-vertical-spacing;
-  padding: 0;
   font-weight: bold;
   background: @add-list-background;
   border-radius: @list-border-radius;
@@ -61,6 +60,22 @@
   padding: @note-padding;
   background: @color-white;
   border-radius: @list-border-radius;;
+  &.edit-mode {
+    padding: 0;
+    background: none;
+  }
+  .text-editable {
+    width: 100%;
+    min-height: 70px;
+    padding: @note-padding;
+    resize: none;
+    background: @color-white;
+    border: none;
+    border-radius: @common-border-radius;
+  }
+  .controls {
+    margin-top: 8px;
+  }
 }
 
 .list-controls {

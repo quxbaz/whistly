@@ -15,7 +15,7 @@ define('App', function() {
 
   App.ApplicationSerializer = DS.LSSerializer.extend();
   App.ApplicationAdapter = DS.LSAdapter.extend({
-    namespace: 'list-app'
+    namespace: 'whistly'
   });
 
   App.Store = DS.Store.extend({
