@@ -8,9 +8,19 @@
 define('com/component', function(App) {
 
   App.FocusInputComponent = Em.TextField.extend({
-    becomeFocused: function() {
+    classNames: ['focus-input'],
+    didInsertElement: function() {
+      this._super.apply(this, arguments);
       this.$().focus();
-    }.on('didInsertElement')
+    }
+  });
+
+  App.FocusTextareaComponent = Em.TextArea.extend({
+    classNames: ['focus-textarea'],
+    didInsertElement: function() {
+      this._super.apply(this, arguments);
+      this.$().focus();
+    }
   });
 
 });
