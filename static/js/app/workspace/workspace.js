@@ -84,7 +84,6 @@ define('workspace', function(App, outerWatcher) {
   // List
 
   App.ListController = Em.ObjectController.extend({
-    noteBufferText: '',
     actions: {
       archiveList: function() {
         var list = this.get('model');
@@ -95,22 +94,17 @@ define('workspace', function(App, outerWatcher) {
         var that = this;
         this.get('model.notes').then(function(notes) {
           notes.pushObject(that.store.createRecord('note', {
-            text: that.get('noteBufferText'),
             list: that.get('model')
           }));
         });
       },
       saveNote: function() {
         this.get('model').save();
-        this.set('noteBufferText', '');
       },
-      cancelNote: function(note) {
+      discardNote: function(note) {
         this.get('model.notes').then(function(notes) {
           notes.removeObject(note);
         });
-      },
-      updateNoteBufferText: function(text) {
-        this.set('noteBufferText', text);
       }
     }
   });
@@ -137,18 +131,15 @@ define('workspace', function(App, outerWatcher) {
         if (typeof addAnother === 'undefined')
           var addAnother = false;
         this.set('editMode', false);
-        this.set('text', _this.get('trimText'));
+        this.set('text', this.get('trimText'));
         this.get('model').save();
         this.get('parentController').send('saveNote');
         if (addAnother)
           this.get('parentController').send('addNewNote');
       },
-      cancel: function() {
+      discard: function() {
         if (this.get('editMode'))
-          this.get('parentController').send('cancelNote', this.get('model'));
-      },
-      input: function() {
-        this.get('parentController').send('updateNoteBufferText', this.get('trimText'));
+          this.get('parentController').send('discardNote', this.get('model'));
       }
     }
   });
@@ -161,21 +152,13 @@ define('workspace', function(App, outerWatcher) {
     editMode: function() {
       return this.get('controller.editMode');
     }.property('controller.editMode'),
-    // It's better to use "input" here, but we need the keyCode so
-    // submit keys don't trigger.
-    keyDown: function(event) {
-      if ((event.keyCode || event.keyWhich) === 13
-          && !event.shiftKey) {
-        this.get('controller').send('input');
-      }
-    },
     watchEvents: {
       // Todo: This terminates immediately. Fix that so that this works.
       // outsideClick: function() {
-      //   this.get('controller').send('cancel');
+      //   this.get('controller').send('discard');
       // },
       escapeKey: function() {
-        this.get('controller').send('cancel');
+        this.get('controller').send('discard');
       },
       enterKey: function(event) {
         if (event.shiftKey)
