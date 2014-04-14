@@ -91,3 +91,5 @@
   - [ ] Setup SSH key on bitbucket.
   - [ ] Get testing working.
   - [ ] Get items working.
+  - [ ] Minimize document-level watchers. Relocate Note document
+        watchers onto list/workspace/application.
