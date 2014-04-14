@@ -90,7 +90,7 @@
   - [ ] Sign up for private micro github account and push to github.
   - [ ] Setup SSH key on bitbucket.
   - [ ] Get testing working.
-  - [ ] Get items working.
+  - [X] Get items working.
   - [ ] Minimize document-level watchers. Relocate Note document
         watchers onto list/workspace/application.
   - [ ] Archive cards that you cancel over a certain character length.
