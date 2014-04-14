@@ -8,7 +8,7 @@
 define('com/mixin', function() {
 
   var util = this.needs('com/util');
-  var mixin = {route: {}, controller: {}, view: {}, component: {}};
+  var mixin = {route: {}, controller: {}, view: {}, el: {}};
 
   mixin.view.WatchForEscape = Em.Mixin.create({
 
@@ -29,6 +29,17 @@ define('com/mixin', function() {
 
   });
 
+  mixin.el.Focus = Em.Mixin.create({
+    didInsertElement: function() {
+      this._super.apply(this, arguments);
+      this.$().focus();
+    }
+  });
+
   return mixin;
 
+});
+
+define('mixin', function() {
+  return this.needs('com/mixin');
 });

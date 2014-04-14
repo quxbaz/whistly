@@ -5,22 +5,9 @@
 */
 
 
-define('com/component', function(App) {
+define('com/component', function(App, mixin) {
 
-  App.FocusInputComponent = Em.TextField.extend({
-    classNames: ['focus-input'],
-    didInsertElement: function() {
-      this._super.apply(this, arguments);
-      this.$().focus();
-    }
-  });
-
-  App.FocusTextareaComponent = Em.TextArea.extend({
-    classNames: ['focus-textarea'],
-    didInsertElement: function() {
-      this._super.apply(this, arguments);
-      this.$().focus();
-    }
-  });
+  App.FocusInputComponent = Em.TextField.extend(mixin.el.Focus);
+  App.FocusTextareaComponent = Em.TextArea.extend(mixin.el.Focus);
 
 });
