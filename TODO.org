@@ -75,6 +75,7 @@
 
 * Later
   - [ ] Think of a project name.
+  - [ ] Think about email clients and how they manage resources.
   - [ ] How to enable content encryption?
 
 * Technical
@@ -88,7 +89,7 @@
 
 * Now
   1. Get archiving working.
-     - One the note and list level.
+     - On the note and list level.
   2. Get View Archives working.
   3. Get directory template system working.
   4. Setup SSH key on bitbucket.
