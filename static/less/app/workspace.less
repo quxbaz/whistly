@@ -1,44 +1,6 @@
-// Lists
-@list-width: 300px;
-@list-horizontal-spacing: 8px;
-@list-vertical-spacing: 8px;
-@list-padding: 12px;
-@list-border-radius: @common-border-radius;
-@color-list-background: #ececec;
-
-// Notes
-@note-padding: 4px 8px;
-@note-vertical-spacing: 8px;
-
-// Add list
-@add-list-background: rgba(200, 200, 200, 0.6);
-
 .workspace {
+  padding: 24px 8px;
   .squeeze;
-}
-
-.add-list {
-  .col;
-  width: @list-width;
-  margin-bottom: @list-vertical-spacing;
-  font-weight: bold;
-  background: @add-list-background;
-  border-radius: @list-border-radius;
-  &.edit-mode {
-    padding: @list-padding;
-    a {
-      height: auto;
-      padding: 0;
-    }
-  }
-  a {
-    .col;
-    width: 100%;
-    height: 100%;
-    padding: @list-padding;
-  }
-  button {margin-top: @note-vertical-spacing;}
-  input {width: 100%;}
 }
 
 .list {

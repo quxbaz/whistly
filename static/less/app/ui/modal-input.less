@@ -1,0 +1,23 @@
+.modal-input {
+  .col;
+  width: @list-width;
+  margin-bottom: @list-vertical-spacing;
+  font-weight: bold;
+  background: @add-list-background;
+  border-radius: @list-border-radius;
+  &.edit-mode {
+    padding: @list-padding;
+    a {
+      height: auto;
+      padding: 0;
+    }
+  }
+  a {
+    .col;
+    width: 100%;
+    height: 100%;
+    padding: @list-padding;
+  }
+  button {margin-top: @note-vertical-spacing;}
+  input {width: 100%;}
+}
