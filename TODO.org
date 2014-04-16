@@ -95,6 +95,9 @@
   - [ ] Add workspace organizations/groups.
   - [ ] Add cloning for everything.
   - [ ] Add Replace-List-With
+  - [ ] Add creation dates on all items.
+  - [ ] Support sorting on all items.
+  - [ ] Support item editing.
 
 * Now
   1. Get workspaces working.
