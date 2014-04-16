@@ -9,6 +9,7 @@ define('main', function() {
     'com/helper',
     'App',
     'com/component',
+    'dashboard',
     'workspace'
   );
 

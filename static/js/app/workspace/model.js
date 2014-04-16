@@ -7,6 +7,11 @@
 
 define('workspace/model', function(App) {
 
+  App.Workspace = DS.Model.extend({
+    title: DS.attr('string'),
+    lists: DS.hasMany('list', {async: true})
+  });
+
   App.List = DS.Model.extend({
     title: DS.attr('string'),
     notes: DS.hasMany('note', {async: true})
