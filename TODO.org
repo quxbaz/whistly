@@ -90,6 +90,12 @@
   - [ ] Get basic atomic undo/redo system working. Make everything
         work off this. Use a global Action Store?
 
+* Stuff you can do
+  - [ ] Add drag and drop for everything (workspaces/lists/notes).
+  - [ ] Add workspace organizations/groups.
+  - [ ] Add cloning for everything.
+  - [ ] Add Replace-List-With
+
 * Now
   1. Get workspaces working.
   2. Get archiving working.
