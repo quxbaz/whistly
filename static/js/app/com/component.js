@@ -30,30 +30,4 @@ define('com/component', function(App, mixin) {
     }
   });
 
-  App.ModalInputComponent = Em.Component.extend({
-    layoutName: 'modal-input-layout',
-    tagName: 'form',
-    classNames: ['modal-input'],
-    editMode: false,
-    inputValue: '',
-    inputPlaceholder: '',
-    cancelText: 'Cancel',
-    saveText: 'Save',
-    normalText: 'Toggle',
-    actions: {
-      toggleEditMode: function() {
-        console.log('toggle');
-        this.set('editMode', true);
-      },
-      cancel: function() {
-        this.set('editMode', false);
-      },
-      confirm: function() {
-        console.log('** Confirm');
-        this.set('editMode', false);
-        this.sendAction('modalInputConfirm');
-      }
-    }
-  })
-
 });

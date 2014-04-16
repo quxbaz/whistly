@@ -44,18 +44,6 @@
       {{render "add-list"}}
     </script>
 
-    <script type="text/x-handlebars" data-template-name="add-list">
-      {{#unless isAddingNewList}}
-        <a {{action "addNewList"}}>Add a list...</a>
-      {{else}}
-        <form {{action "saveNewList" on="submit"}}>
-          {{focus-input value=title placeholder="Title"}}
-          <button {{action "cancel"}} type="button">Cancel</button>
-          <button type="submit">Save</button>
-        </form>
-      {{/unless}}
-    </script>
-
     <script type="text/x-handlebars" data-template-name="list">
       <header>{{title}}</header>
       {{#each notes}}
@@ -83,17 +71,17 @@
       {{/if}}
     </script>
 
-    <script type="text/x-handlebars" data-template-name="modal-input-layout">
-      {{#if editMode}}
-        <form {{action "confirm" on="submit"}}>
-          {{focus-input value=inputValue placeholder=inputPlaceholder}}
+    <script type="text/x-handlebars" data-template-name="modal-input">
+      {{#if view.editMode}}
+        <form {{action "confirm" on="submit" target="view"}}>
+          {{focus-input value=view.inputValue placeholder=view.placeholderText}}
           <div class="modal-input-controls">
-            <button {{action "cancel"}} type="button">{{cancelText}}</button>
-            <button type="submit">{{saveText}}</button>
+            <button {{action "cancel" target="view"}} type="button">{{view.cancelText}}</button>
+            <button type="submit">{{view.saveText}}</button>
           </div>
         </form>
       {{else}}
-        <a {{action "toggleEditMode"}}>{{normalText}}</a>
+        <a {{action "toggleEditMode" target="view"}}>{{view.normalText}}</a>
       {{/if}}
     </script>
 

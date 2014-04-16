@@ -40,45 +40,19 @@ define('workspace', function(App, outerWatcher) {
   // Add list
 
   App.AddListController = Em.Controller.extend({
-    title: '',
-    isAddingNewList: false,
-    reset: function() {
-      this.set('isAddingNewList', false);
-      this.set('title', '');
-    },
     actions: {
-      addNewList: function() {
-        this.set('isAddingNewList', true);
-      },
-      saveNewList: function(title) {
-        if (this.get('title').length === 0)
-          return;
-        this.get('store').createRecord('list', {
-          title: this.get('title')
+      confirmModalInput: function(title) {
+        this.store.createRecord('list', {
+          title: title
         }).save();
-        this.reset();
-      },
-      cancel: function() {
-        this.set('isAddingNewList', false);
       }
     }
   });
 
-  App.AddListView = Em.View.extend(outerWatcher.mixin, {
+  App.AddListView = App.ModalInputView.extend({
     classNames: ['add-list'],
-    classNameBindings: ['isAddingNewList'],
-    templateName: 'add-list',
-    isAddingNewList: function() {
-      return this.get('controller.isAddingNewList');
-    }.property('controller.isAddingNewList'),
-    watchEvents: {
-      outsideClick: function() {
-        this.get('controller').send('cancel');
-      },
-      escapeKey: function() {
-        this.get('controller').send('cancel');
-      }
-    }
+    normalText: 'Add a list...',
+    placeholderText: 'Title'
   });
 
   // List
