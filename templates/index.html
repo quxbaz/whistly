@@ -73,6 +73,20 @@
       {{/if}}
     </script>
 
+    <script type="text/x-handlebars" data-template-name="modal-input-layout">
+      {{#if editMode}}
+        <form {{action "confirm" on="submit"}}>
+          {{focus-input value=inputValue placeholder=inputPlaceholder}}
+          <div class="modal-input-controls">
+            <button {{action "cancel"}} type="button">{{cancelText}}</button>
+            <button type="submit">{{saveText}}</button>
+          </div>
+        </form>
+      {{else}}
+        <a {{action "toggleEditMode"}}>{{normalText}}</a>
+      {{/if}}
+    </script>
+
   {% endraw %}
 
   {% include "scripts.html" %}
