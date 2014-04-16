@@ -45,10 +45,12 @@
 
     <script type="text/x-handlebars" data-template-name="workspace">
       <h1>{{title}}</h1>
-      {{#each lists}}
-        {{render "list" this}}
-      {{/each}}
-      {{render "add-list"}}
+      <div class="content">
+        {{#each lists}}
+          {{render "list" this}}
+        {{/each}}
+        {{render "add-list"}}
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="list">
