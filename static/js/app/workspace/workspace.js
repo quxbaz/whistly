@@ -23,7 +23,16 @@ define('workspace', function(App, outerWatcher) {
     }
   });
 
-  App.WorkspaceController = Em.ObjectController.extend({});
+  App.WorkspaceController = Em.ObjectController.extend({
+    actions: {
+      addNewList: function(title) {
+        var list = this.store.createRecord('list', {title: title});
+        list.save();
+        this.get('model.lists').pushObject(list);
+        this.get('model').save();
+      }
+    }
+  });
 
   App.WorkspaceView = Em.View.extend({
     classNames: ['workspace'],
@@ -33,11 +42,10 @@ define('workspace', function(App, outerWatcher) {
   // Add list
 
   App.AddListController = Em.Controller.extend({
+    needs: ['workspace'],
     actions: {
       confirmModalInput: function(title) {
-        this.store.createRecord('list', {
-          title: title
-        }).save();
+        this.get('controllers.workspace').send('addNewList', title);
       }
     }
   });
