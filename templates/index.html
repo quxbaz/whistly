@@ -27,14 +27,15 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="dashboard">
-      <h1>Workspaces</h1>
-      {{modal-input}}
-      <a {{action "addNewWorkspace"}}>Add new workspace</a>
-      <ul>
-        {{#each workspace}}
-          <li>{{title}}</li>
-        {{/each}}
-      </ul>
+      <div class="content">
+        <h1>Workspaces</h1>
+        {{render "add-workspace"}}
+        <ul class="list">
+          {{#each}}
+            <li class="note">{{title}}</li>
+          {{/each}}
+        </ul>
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="workspace">

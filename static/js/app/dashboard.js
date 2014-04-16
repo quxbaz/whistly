@@ -17,16 +17,29 @@ define('dashboard', function(App) {
     }
   });
 
-  App.DashboardController = Em.Controller.extend({
-    actions: {
-      addNewWorkspace: function() {
+  App.DashboardController = Em.ArrayController.extend({});
 
+  App.DashboardView = Em.View.extend({
+    templateName: 'dashboard',
+    classNames: ['dashboard']
+  });
+
+  // Add workspace
+
+  App.AddWorkspaceController = Em.Controller.extend({
+    actions: {
+      confirmModalInput: function(title) {
+        this.store.createRecord('workspace', {
+          title: title
+        }).save();
       }
     }
   });
 
-  App.DashboardView = Em.View.extend({
-    templateName: 'dashboard'
+  App.AddWorkspaceView = App.ModalInputView.extend({
+    classNames: ['add-workspace'],
+    normalText: 'Add a workspace...',
+    placeholderText: 'Title'
   });
 
 });
