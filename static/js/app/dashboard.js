@@ -14,6 +14,11 @@ define('dashboard', function(App) {
   App.DashboardRoute = Em.Route.extend({
     model: function() {
       return this.store.find('workspace');
+    },
+    actions: {
+      gotoWorkspace: function(model) {
+        this.transitionTo('workspace', model);
+      }
     }
   });
 
