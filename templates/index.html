@@ -44,7 +44,8 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="workspace">
-      {{#each}}
+      <h1>{{title}}</h1>
+      {{#each lists}}
         {{render "list" this}}
       {{/each}}
       {{render "add-list"}}

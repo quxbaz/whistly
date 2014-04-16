@@ -30,7 +30,7 @@ define('workspace', function(App, outerWatcher) {
     }
   });
 
-  App.WorkspaceController = Em.ArrayController.extend({});
+  App.WorkspaceController = Em.ObjectController.extend({});
 
   App.WorkspaceView = Em.View.extend({
     classNames: ['workspace'],
