@@ -32,7 +32,12 @@
         {{render "add-workspace"}}
         <ul class="list">
           {{#each}}
-            <li class="note">{{title}}</li>
+            <li class="note">
+              <div class="title">{{title}}</div>
+              <small>
+                {{try-else lists.length "No"}} lists
+              </small>
+            </li>
           {{/each}}
         </ul>
       </div>
