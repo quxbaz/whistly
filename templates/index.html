@@ -32,7 +32,7 @@
         {{render "add-workspace"}}
         <ul class="list">
           {{#each}}
-            <li class="note">
+            <li {{action "gotoWorkspace" this on="click"}} class="note">
               <div class="title">{{title}}</div>
               <small>
                 {{try-else lists.length "No"}} lists

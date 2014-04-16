@@ -12,21 +12,14 @@ define('workspace', function(App, outerWatcher) {
   var mixin = this.needs('com/mixin');
 
   App.Router.map(function() {
-    this.resource('workspace');
+    this.resource('workspace', {path: '/workspace/:id'});
   });
 
   // Workspace
 
   App.WorkspaceRoute = Em.Route.extend({
-    model: function() {
-      return this.store.find('list');
-    },
-    renderTemplate: function(controller, model) {
-      this.render();
-      this.render('list', {
-        into: 'workspace',
-        outlet: 'list'
-      });
+    model: function(params) {
+      return this.store.find('workspace', params.id);
     }
   });
 
