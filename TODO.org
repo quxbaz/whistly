@@ -98,16 +98,17 @@
   - [ ] Add creation dates on all items.
   - [ ] Support sorting on all items.
   - [ ] Support item editing.
+  - [ ] Add navbar/controls bar that supports:
+        - Navigating back to workspaces
 
 * Now
-  1. Get workspaces working.
-  2. Get archiving working.
+  1. Get archiving working.
      - On the note and list level.
-  3. Get directory template system working.
-  4. Setup SSH key on bitbucket.
-  5. Get account authentication working.
-  6. Get database backend working.
-  7. Get mocha unit testing working.
-  8. Minimize document-level watchers. Relocate Note document watchers
+  2. Get directory template system working.
+  3. Setup SSH key on bitbucket.
+  4. Get account authentication working.
+  5. Get database backend working.
+  6. Get mocha unit testing working.
+  7. Minimize document-level watchers. Relocate Note document watchers
      onto list/workspace/application.
-  9. Archive cards that you cancel over a certain character length.
+  8. Archive cards that you cancel over a certain character length.
